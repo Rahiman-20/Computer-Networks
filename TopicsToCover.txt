@@ -1,0 +1,43 @@
+| Topic                                     | Importance | Confidence (Interview) |
+| ----------------------------------------- | ---------- | ---------------------- |
+| OSI vs TCP/IP Model                       | Very High  | 10/10                  |
+| TCP vs UDP                                | Very High  | 10/10                  |
+| HTTP vs HTTPS                             | Very High  | 10/10                  |
+| DNS                                       | Very High  | 10/10                  |
+| IP Addressing (IPv4/IPv6)                 | High       | 9.5/10                 |
+| Ports & Sockets                           | Very High  | 10/10                  |
+| TCP Three-Way Handshake                   | Very High  | 10/10                  |
+| TCP Four-Way Termination                  | High       | 9/10                   |
+| Cookies vs Sessions vs JWT                | Very High  | 10/10                  |
+| REST APIs                                 | Very High  | 10/10                  |
+| HTTP Methods                              | High       | 9.5/10                 |
+| HTTP Status Codes                         | High       | 9.5/10                 |
+| Load Balancer Basics                      | High       | 9/10                   |
+| Proxy vs Reverse Proxy                    | High       | 9/10                   |
+| **Caching (Browser, CDN, Redis Basics)**  | Very High  | 9.5/10                 |
+| **WebSockets vs HTTP**                    | High       | 9/10                   |
+| **TLS/SSL Handshake (Basics)**            | High       | 9/10                   |
+| **NAT (Network Address Translation)**     | High       | 8.5/10                 |
+| **CDN (Content Delivery Network) Basics** | High       | 9/10                   |
+
+
+| Priority          Topic                                |
+| --------        | ------------------------------------ |
+| ⭐⭐⭐⭐⭐    | OSI vs TCP/IP Model                  |
+| ⭐⭐⭐⭐⭐    | TCP vs UDP                           |
+| ⭐⭐⭐⭐⭐    | HTTP vs HTTPS                        |
+| ⭐⭐⭐⭐⭐    | DNS                                  |
+| ⭐⭐⭐⭐⭐    | Ports & Sockets                      |
+| ⭐⭐⭐⭐⭐    | TCP Three-Way Handshake              |
+| ⭐⭐⭐⭐⭐    | Cookies vs Sessions vs JWT           |
+| ⭐⭐⭐⭐⭐    | HTTP Methods                         |
+| ⭐⭐⭐⭐⭐    | HTTP Status Codes                    |
+| ⭐⭐⭐⭐☆     | IP Addressing (IPv4/IPv6)            |
+| ⭐⭐⭐⭐☆     | TCP Four-Way Termination             |
+| ⭐⭐⭐⭐☆     | Load Balancer Basics                 |
+| ⭐⭐⭐⭐☆     | Proxy vs Reverse Proxy               |
+| ⭐⭐⭐⭐☆     | Caching (Browser, CDN, Redis Basics) |
+| ⭐⭐⭐⭐☆     | CDN Basics                           |
+| ⭐⭐⭐⭐☆     | WebSockets vs HTTP                   |
+| ⭐⭐⭐⭐☆     | TLS/SSL Handshake                    |
+| ⭐⭐⭐☆☆      | NAT                                  |
