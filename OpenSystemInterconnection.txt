@@ -1,0 +1,45 @@
+                                    OSI 7 Layers
+Physical Layer
+-------Last layer in OSI model
+-------It is the last layer on sender side and the first layer on reciever side
+-------It actually deals with hardware
+-------The data(bits) from data linke layer are recieved and converted into signals and that signals are again converted into data bits for the data link layer functionality on reciever side
+-------It only includes Hardware.It deals with hardware devices like cables,connectors,repeaters and hubs
+-------Can use the same channel(path b/w sender & reciver) to send multiple signals
+-------Encoding (analog to digital / digital to analog etc.. )
+Data Link Layer
+-------2nd layer from bottom
+-------It ensures that data moves Hope to Hope or Node to Node delivery
+-------within a single network we can use the DLL to make a communication  by using MAC address
+-------Flow Control:The speed at which data is sent through channel this is is controled by DLL by using Stop and Wait Protocol,Selective Repeat.It does flow control on each and every node by usig these protocols
+-------Error Control:This is also done for Hope to Hope Example : CRC(Cyclic Redundancy Check)
+-------Access Control: CSMA/CD, Aloha,Token Ring only one hope uses a channel and rest of all dont so collisions are avoided
+-------Data Packets are converted as Frames
+Network Layer
+-------3rd Layer from bottom
+-------Host to Host delivery/Source to destination deliver of data is responsibility of Network Layer by using IP addresses(Logical Address) 
+-------we can easily find Network and Host with help of this logical address
+-------Routing - Finding the shortest path to send the data across networks 
+-------Fragmentation data is divided into frames cause we cant send the entire data at at time to other routers 
+-------Congestion Control - what if all nodes send the msgs at the same time the network is filled with msgs
+Transport Layer
+-------End to End(Port to Prot) delivery of data from what application our msg is sending from sender and on what application on reciver side is recieveing it
+-------TCP(reliablity& inorder delivery) / UDP protocols 
+-------No data loss 
+-------Error Control: checksum
+-------Conjestion Control& Flow Control
+-------the msgs are divided as d=segments
+-------multiplexing(even ifdata is recieved from multiple devices (many to one)) / DeMUX
+Session Layer
+-------Creating a Session
+-------Authentication(login a website)->Authorization(using the website)
+-------Session restoration 
+-------webinar->Flow Control & Sysnchronization
+Presentation Layer
+-------Code conversion 
+-------Encryption & Decruption
+-------Compression of Data
+Application Layer
+-------used by network applications 
+-------Acts as an Interface betwwn software and the network
+-------chrome ,firefox
