@@ -1,0 +1,10 @@
+| **Feature**           | **HTTP**                                                        | **HTTPS**                                                                |
+| --------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| **Full Form**         | HyperText Transfer Protocol                                     | HyperText Transfer Protocol Secure                                       |
+| **Security**          | Data is sent as plain text. Anyone intercepting it can read it. | Data is encrypted, making it secure from hackers and attackers.          |
+| **Encryption**        | No encryption.                                                  | Uses **SSL(Secure Sockets Layer)/TLS(Transport Layer Security)**encryption|
+| **Port Number**       | Port **80**                                                     | Port **443**                                                             |
+| **Data Privacy**      | Does not protect sensitive information.                         | Protects passwords, banking details, personal information, etc.          |
+| **Browser Indicator** | Browser may show **"Not Secure"**.                              | Browser shows a **🔒 padlock** indicating a secure connection.           |
+| **Performance**       | Older protocol without modern optimizations.                    | Often faster today because of modern protocols like HTTP/2 and HTTP/3.   |
+| **Use Cases**         | Public websites where security isn't important.                 | Login pages, banking, shopping, payments, social media, healthcare, etc. |
