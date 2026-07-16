@@ -1,0 +1,122 @@
+# Why We Need DNS
+
+### User-Friendly Names
+
+People find it easy to remember names like **google.com** or **cricinfo.com**, but difficult to remember complex numerical IP addresses. DNS acts as a mapping database to translate these domain names into the IP addresses that computers use.
+
+### Dynamic Hosting
+
+If a website changes its hosting provider (e.g., from **Amazon Web Services** to **GoDaddy**), its IP address may change. By using DNS, the domain name stays the same, allowing the business to maintain its identity without requiring users to learn a new address.
+
+### Analogy
+
+It functions like a **phone book** or **dictionary**, mapping a name (the key) to a specific number (the value).
+
+---
+
+# How DNS Architecture Works
+
+### Hierarchical Structure
+
+When you type a URL into your browser, it triggers a request. A resolver takes this request to a root server, which directs it to the appropriate top-level domain server (e.g., **.com**, **.in**).
+
+### Authoritative Servers
+
+These servers hold the specific records for domain names, such as the exact IP address for **cricinfo.com**. Organizations often have multiple IP addresses or even thousands of servers (like **Facebook**), and the authoritative server ensures the request is routed correctly.
+
+---
+
+# DNS Optimization
+
+### DNS Caching
+
+To avoid hitting the root server for every single request, Internet Service Providers (ISPs) use caching. This stores previously resolved IP addresses locally, significantly speeding up the process for subsequent visits to the same website.
+
+### Future Topics
+
+# Recursive Query
+
+### What is a Recursive Query?
+
+A **recursive query** is a DNS query in which the client asks the DNS resolver to find the **final IP address**. The resolver is responsible for performing all the necessary lookups and returning the complete answer to the client.
+
+### How It Works
+
+When a user enters a website address (e.g., **[www.google.com](http://www.google.com)**), the browser sends a recursive query to the DNS resolver. If the resolver does not already know the IP address, it contacts the **Root Server**, then the **Top-Level Domain (TLD) Server**, and finally the **Authoritative DNS Server**. After obtaining the IP address, it returns the final answer to the browser.
+
+### Responsibility
+
+In a recursive query, the **DNS Resolver** does all the work. The client simply waits for the final IP address and does not communicate with any other DNS servers.
+
+### Example
+
+1. User enters **[www.google.com](http://www.google.com)**.
+2. Browser sends a recursive query to the DNS Resolver.
+3. Resolver contacts the Root Server.
+4. Resolver contacts the **.com** TLD Server.
+5. Resolver contacts Google's Authoritative DNS Server.
+6. Resolver receives the IP address.
+7. Resolver sends the final IP address back to the browser.
+
+---
+
+# Iterative Query
+
+### What is an Iterative Query?
+
+An **iterative query** is a DNS query in which each DNS server returns the address of the **next DNS server** instead of finding the final IP address itself. The query continues step by step until the correct IP address is found.
+
+### How It Works
+
+When a DNS server receives an iterative query, it does not perform the complete lookup. Instead, it directs the requester to another DNS server that is closer to the final answer.
+
+For example, the Root Server directs the requester to the **.com TLD Server**, and the TLD Server directs it to the **Authoritative DNS Server**. The Authoritative Server finally returns the IP address.
+
+### Responsibility
+
+In an iterative query, **each DNS server only provides the next step**. No single server performs the entire lookup process.
+
+### Example
+
+1. Resolver asks the Root Server for **[www.google.com](http://www.google.com)**.
+2. Root Server replies, "Ask the **.com TLD Server**."
+3. Resolver asks the **.com TLD Server**.
+4. TLD Server replies, "Ask Google's Authoritative DNS Server."
+5. Resolver asks the Authoritative DNS Server.
+6. Authoritative DNS Server returns the IP address.
+
+---
+
+# Difference Between Recursive Query and Iterative Query
+
+### Recursive Query
+
+* The client requests the **final IP address**.
+* The DNS Resolver performs the complete lookup.
+* The client communicates only with the DNS Resolver.
+* The Resolver contacts multiple DNS servers if required.
+* The final IP address is returned to the client.
+
+### Iterative Query
+
+* The requester is guided **step by step**.
+* Each DNS server returns the address of the next DNS server.
+* No single DNS server performs the complete lookup.
+* The lookup continues until the Authoritative DNS Server is reached.
+* The final IP address is obtained after following all the referrals.
+
+---
+
+# Easy Trick to Remember
+
+### Recursive Query
+
+**"Do everything and give me the final answer."**
+
+The DNS Resolver does all the work.
+
+### Iterative Query
+
+**"Tell me where to go next."**
+
+Each DNS server only points to the next DNS server until the final answer is found.
