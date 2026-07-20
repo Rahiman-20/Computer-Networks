@@ -1,0 +1,150 @@
+PORT NUMBER AND SOCKET
+1. What is a Port Number?
+
+A Port Number is a logical number used to identify which application or service should receive incoming data on a computer.
+
+Think of it Like This
+IP Address → Identifies the device
+Port Number → Identifies the application inside that device
+
+IP Address = Which House?
+Port Number = Which Room inside the House?
+
+2. Real-Life Example
+
+Imagine this apartment.
+
+Apartment Address
+-----------------
+Flat No : 205
+
+Many people live inside.
+
+Room 1 → Father
+Room 2 → Mother
+Room 3 → Son
+Room 4 → Daughter
+
+Now suppose a courier arrives.
+
+If the courier only knows
+
+Flat No : 205
+
+He knows which apartment to go to.
+
+But...
+
+He doesn't know who should receive the parcel.
+
+He needs
+
+Flat No : 205
+Room 3
+
+Now the parcel reaches the correct person.
+
+3. Similarly in Computer Networks
+
+The IP Address identifies the computer.
+
+IP Address
+     ↓
+192.168.1.20
+
+But one computer can run multiple applications.
+
+Chrome
+WhatsApp
+Zoom
+Spotify
+VS Code
+
+So the operating system asks:
+
+"Which application should receive this incoming data?"
+
+The answer is:
+
+Port Number
+
+4. Why Do We Need a Port Number?
+
+A single computer may run many applications simultaneously.
+
+The IP Address tells us
+
+Which computer?
+
+The Port Number tells us
+
+Which application inside that computer?
+
+5. What is a Socket?
+
+Now imagine this computer.
+
+Your Computer
+-----------------------------
+IP Address : 192.168.1.10
+
+Chrome      → Port 50000
+Zoom        → Port 50001
+WhatsApp    → Port 50002
+
+Suppose Chrome wants to communicate with YouTube.
+
+How does the operating system identify this exact communication?
+
+That's where the Socket comes in.
+
+Simple Definition
+
+A Socket is an endpoint of communication between two applications over a network.
+
+Formula
+Socket = IP Address + Port Number
+
+A socket uniquely identifies one endpoint of a network connection.
+
+6. Phone Call Analogy
+
+Imagine two people talking.
+
+Rahman
+Phone Number : 9876543210
+
+        calls
+
+Ali
+Phone Number : 9123456789
+
+The phone number uniquely identifies each person.
+
+Similarly,
+
+Computer
+     ↓
+
+IP Address + Port Number
+
+     ↓
+
+Socket
+
+A Socket is like the contact number of an application.
+
+8. Socket vs Port
+
+| **Parameter**     | **Socket**                      | **Port**                                |
+| ----------------- | ------------------------------- | --------------------------------------- |
+| **Definition**    | Endpoint of communication       | Identifies an application/service       |
+| **Meaning**       | IP Address + Port Number        | Port Number only                        |
+| **Purpose**       | Enables communication           | Identifies the destination application  |
+| **Components**    | IP + Port                       | Port only                               |
+| **Example**       | 192.168.1.10:5000               | 5000                                    |
+| **Communication** | Sends and receives data         | Directs data to the correct application |
+| **Uniqueness**    | Unique because of IP + Port     | Can be reused on different IP addresses |
+| **Created By**    | Created by the OS               | Well-known or dynamically assigned      |
+| **Used In**       | TCP and UDP                     | TCP and UDP                             |
+| **Analogy**       | Complete address (House + Room) | Room number                             |
