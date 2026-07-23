@@ -1,0 +1,595 @@
+Cookies
+What is a Cookie?
+
+A Cookie is a small piece of data stored in the user's web browser by a website. It helps the website remember information about the user, such as login status, language preference, shopping cart items, or other settings.
+
+Cookies make the browsing experience smoother by allowing websites to recognize the user during future requests.
+
+Real-Life Analogy (Movie Ticket)
+
+Imagine you go to a movie theater.
+
+You buy a ticket, and the staff gives you a movie ticket.
+
+Movie Ticket
+
+Seat: A15
+Movie: Superman
+Show Time: 7:00 PM
+
+You keep this ticket in your pocket.
+
+Whenever a staff member asks,
+
+Please show your ticket.
+
+you simply show the ticket instead of buying another one.
+
+Similarly, a website gives your browser a cookie, and your browser automatically sends it back whenever you visit the website again.
+
+How Cookies Work
+Step 1: User Visits the Website
+
+The user opens a website and logs in.
+
+Browser
+   │
+   │ Username & Password
+   ▼
+Website Server
+Step 2: Server Creates a Cookie
+
+After successful login, the server creates a cookie.
+
+Login Successful
+
+Cookie:
+ID = abc123xyz
+Step 3: Browser Stores the Cookie
+
+The browser saves the cookie on the user's device.
+
+Browser
+
+Cookies
+----------------
+ID = abc123xyz
+Step 4: User Sends Another Request
+
+Later, the user opens another page.
+
+GET /profile
+
+Cookie:
+ID = abc123xyz
+
+The browser automatically attaches the cookie to the request.
+
+Step 5: Server Identifies the User
+
+The server reads the cookie.
+
+Cookie:
+ID = abc123xyz
+
+Server:
+Welcome back, Rehman!
+
+The user is recognized without logging in again.
+
+Technical Example
+
+Suppose you log in to Amazon.
+
+First Request
+Browser
+   │
+   │ Login Request
+   ▼
+Amazon Server
+
+After successful login, Amazon sends:
+
+Set-Cookie:
+userID=abc123
+
+The browser stores it.
+
+Next Request
+
+When you open your cart:
+
+Browser
+   │
+   │ Cookie: userID=abc123
+   ▼
+Amazon Server
+
+The server recognizes your browser using the cookie and displays your shopping cart.
+
+What Can Cookies Store?
+
+Cookies usually store small amounts of information such as:
+
+User ID
+Session ID
+Language preference
+Theme (Light/Dark mode)
+Shopping cart ID
+"Remember Me" information
+User preferences
+
+Note: Cookies should not store sensitive information such as passwords or credit card details.
+
+Key Points
+A cookie is stored in the user's browser.
+It is automatically sent to the server with every matching request.
+Cookies help websites remember users and their preferences.
+Cookies are small in size (typically up to 4 KB).
+They improve user experience by avoiding repeated login or configuration.
+Cookies often store a Session ID, while the actual user information is stored on the server
+
+Session
+What is a Session?
+
+A Session is a mechanism used by a web server to store information about a user on the server side during a particular visit to a website.
+
+Instead of storing user information in the browser, the server stores it in a session and gives the browser a unique Session ID. The browser sends this Session ID with every request, allowing the server to identify the user.
+
+Sessions are mainly used to keep users logged in and maintain their state while they interact with a website.
+
+Real-Life Analogy (Hospital Token)
+
+Imagine you visit a hospital.
+
+At the reception, you register your details.
+
+The receptionist stores all your information in the hospital's computer.
+
+Patient Details
+
+Name: Rehman
+Age: 20
+Doctor: Dr. Rao
+Room: 203
+Disease: Fever
+
+Instead of giving you all these records, the receptionist gives you only a token.
+
+Patient Token
+
+Token No: 105
+
+You carry only this token.
+
+Whenever you visit the doctor's room, pharmacy, or billing counter, they simply ask for your token number.
+
+Staff:
+Please show your token.
+
+They look up Token 105 in the hospital database and immediately retrieve all your details.
+
+Similarly, in a web application:
+
+Hospital Database → Server Session Storage
+Patient Token → Session ID
+Patient Details → User Session Data
+Hospital Staff → Web Server
+
+The browser only stores the Session ID, while all actual user information remains safely on the server.
+
+How Sessions Work
+Step 1: User Logs In
+
+The user enters their username and password.
+
+Browser
+   │
+   │ Username & Password
+   ▼
+Website Server
+Step 2: Server Creates a Session
+
+After successful authentication, the server creates a session.
+
+Session Created
+
+Session ID : ABCD1234
+
+User Name : Rehman
+Role      : Student
+Login Time: 10:30 AM
+Expires In: 30 Minutes
+
+This information is stored inside the server.
+
+Step 3: Server Sends the Session ID
+
+The server sends only the Session ID to the browser.
+
+Session ID
+
+ABCD1234
+
+Usually, this Session ID is stored inside a cookie.
+
+Step 4: Browser Stores the Session ID
+
+The browser saves only the Session ID.
+
+Browser
+
+Cookie
+
+SessionID = ABCD1234
+
+Notice that the browser does not store:
+
+User name
+Password
+Role
+Permissions
+
+It stores only the Session ID.
+
+Step 5: Browser Makes Another Request
+
+Later, the user opens another page.
+
+GET /profile
+
+Cookie
+
+SessionID = ABCD1234
+
+The browser automatically sends the Session ID.
+
+Step 6: Server Identifies the User
+
+The server searches its session storage.
+
+Session Table
+
+ABCD1234
+      │
+      ▼
+User : Rehman
+Role : Student
+
+The server recognizes the user and allows access without asking for login again.
+
+Technical Example
+
+Suppose you log in to your college portal.
+
+First Request
+Browser
+   │
+   │ Username & Password
+   ▼
+College Server
+
+After successful login, the server creates:
+
+Session
+
+Session ID : XYZ987
+
+Student Name : Rehman
+Roll No      : 221FA04050
+Branch       : AI & DS
+
+The server sends only:
+
+Set-Cookie
+
+SessionID = XYZ987
+Next Request
+
+When you open your attendance page,
+
+Browser
+   │
+   │ Cookie
+   │ SessionID = XYZ987
+   ▼
+College Server
+
+The server checks:
+
+Session Table
+
+XYZ987
+
+It retrieves your stored information and displays your attendance.
+
+What Does a Session Store?
+
+A session can store information such as:
+
+User ID
+User name
+Login status
+User role (Student/Admin)
+Permissions
+Shopping cart information
+Temporary user data
+Authentication details
+
+Unlike cookies, this data is stored only on the server.
+
+Key Points
+A Session stores user information on the server.
+The browser stores only a unique Session ID.
+The Session ID is usually sent to the browser inside a cookie.
+Every request includes the Session ID, allowing the server to identify the user.
+Sessions are more secure because sensitive information never leaves the server.
+Sessions usually expire automatically after a period of inactivity or when the user logs out.
+
+JSON Web Token (JWT)
+What is JWT?
+
+JWT (JSON Web Token) is a secure, compact, and self-contained token used to authenticate and identify users in web applications.
+
+Unlike a Session, where user information is stored on the server, a JWT stores the user's information inside the token itself. The server verifies the token's signature to ensure it has not been modified.
+
+JWT is widely used in REST APIs, mobile applications, microservices, and modern web applications because it is stateless.
+
+Real-Life Analogy (College ID Card)
+
+Imagine your college issues every student an ID card.
+
+The card contains:
+
+College ID Card
+
+Name      : Rehman
+Roll No   : 221FA04050
+Branch    : AI & DS
+Valid Till: 2027
+
+Official College Seal
+
+Whenever you enter the college library or examination hall, the security guard asks:
+
+Please show your ID card.
+
+The guard checks:
+
+Is the college seal genuine?
+Is the card expired?
+Has anyone changed the details?
+
+If everything is valid, you're allowed to enter.
+
+Notice something important:
+
+The guard does not call the college office every time to ask who you are.
+
+Your identity is already present on the ID card itself.
+
+JWT works exactly the same way.
+
+Analogy Mapping
+Real Life	JWT
+College ID Card	JWT Token
+Student Information	Payload
+College Seal	Signature
+Security Guard	Server
+Checking the Seal	Verifying Signature
+How JWT Works
+Step 1: User Logs In
+
+The user enters a username and password.
+
+Browser
+   │
+   │ Username & Password
+   ▼
+Website Server
+Step 2: Server Verifies the User
+
+If the credentials are correct, the server creates a JWT.
+
+JWT Generated
+
+Header
+Payload
+Signature
+Step 3: Server Sends the JWT
+
+The server sends the token to the browser.
+
+JWT
+
+eyJhbGciOiJIUzI1Ni...
+
+
+The browser stores it.
+
+It can be stored in:
+
+Local Storage
+Session Storage
+Cookie
+Step 4: Browser Stores the JWT
+Browser
+
+Local Storage
+
+JWT Token
+Step 5: Browser Makes Another Request
+
+Whenever the user requests another page or API,
+
+GET /profile
+
+Authorization:
+
+Bearer JWT_TOKEN
+
+The browser sends the JWT with the request.
+
+Step 6: Server Verifies the JWT
+
+The server checks:
+
+Is the signature valid?
+Has the token expired?
+Has anyone modified the payload?
+
+If everything is correct,
+
+Access Granted
+
+Welcome Rehman!
+
+Otherwise,
+
+401 Unauthorized
+JWT Structure
+
+A JWT consists of three parts separated by dots.
+
+Header.Payload.Signature
+
+Example:
+
+xxxxx.yyyyy.zzzzz
+1. Header
+
+The header contains information about the token.
+
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+
+It tells:
+
+Which algorithm is used
+Token type (JWT)
+2. Payload
+
+The payload contains user information (called claims).
+
+Example:
+
+{
+  "id": 105,
+  "name": "Rehman",
+  "role": "Student"
+}
+
+The payload can store:
+
+User ID
+Name
+Email
+Role
+Expiration Time
+Permissions
+
+Important: The payload is encoded, not encrypted. Anyone who has the token can decode and read it, so sensitive information like passwords should never be stored in the payload.
+
+3. Signature
+
+The server creates a signature using:
+
+HASH(
+Header +
+Payload +
+Secret Key
+)
+
+This signature ensures that the token has not been modified.
+
+If someone changes even one character in the payload,
+
+Old Signature
+
+ABC123
+
+↓
+
+Payload Modified
+
+↓
+
+New Signature
+
+XYZ456
+
+The server detects the mismatch and rejects the token.
+
+Technical Example
+
+Suppose you log in to a shopping website.
+
+Login Request
+Browser
+   │
+   │ Username & Password
+   ▼
+Shopping Server
+
+The server creates:
+
+{
+  "id": 101,
+  "name": "Rehman",
+  "role": "Customer"
+}
+
+Then it generates a JWT and sends it to the browser.
+
+Next Request
+
+When the user opens the Orders page,
+
+Browser
+
+Authorization
+
+Bearer eyJhbGc...
+
+The server verifies the signature.
+
+If valid,
+
+Access Granted
+
+Showing Orders...
+
+No session lookup is required.
+
+Where is JWT Stored?
+
+JWT can be stored in:
+
+Local Storage
+Session Storage
+Cookies
+
+The most suitable storage method depends on the application's security requirements.
+
+Advantages of JWT
+Stateless authentication (server usually doesn't store session data)
+Fast verification
+Ideal for REST APIs
+Works well with mobile applications
+Easily shared between multiple microservices
+Reduces server memory usage
+Disadvantages of JWT
+Cannot be easily revoked before it expires unless additional mechanisms (like a token blacklist) are used.
+JWTs are larger than simple Session IDs.
+If a JWT is stolen and stored insecurely, it can be misused until it expires.
+The payload is readable after decoding, so sensitive data should never be included.
+Key Points
+JWT stands for JSON Web Token.
+It is a self-contained authentication token.
+User information is stored inside the payload.
+The signature protects the token from tampering.
+The server verifies the signature instead of looking up a session.
+JWT is widely used for REST APIs, mobile apps, and microservices.
+JWT follows a stateless authentication approach, making it highly scalable.
