@@ -1,0 +1,76 @@
+TCP 4-Way Handshake (Connection Termination)
+
+The TCP 4-Way Handshake is the process used by the Transmission Control Protocol (TCP) to safely close (terminate) an already established connection between a client and a server.
+
+Unlike the 3-Way Handshake, which establishes a connection, the 4-Way Handshake ensures that both sides finish sending all remaining data before disconnecting.
+
+Real-Life Example
+
+Imagine two friends talking on a phone.
+
+Friend A (Client):
+
+"I'm done talking. I'll hang up now."
+
+Friend B (Server):
+
+"Okay, I heard you. But wait, I'm still saying something."
+
+Friend B finishes speaking:
+
+"Now I'm also done. I'll hang up."
+
+Friend A:
+
+"Okay, goodbye."
+
+Now both friends hang up safely.
+
+This is exactly how the TCP 4-Way Handshake works.
+
+TCP 4-Way Handshake Process
+Step 1 (FIN)
+
+The client finishes sending all its data and sends a FIN (Finish) segment to the server.
+
+This informs the server that:
+
+"I have no more data to send."
+
+The client enters the FIN_WAIT_1 state.
+
+Step 2 (ACK)
+
+The server receives the FIN and sends back an ACK (Acknowledgement).
+
+This tells the client:
+
+"I received your FIN."
+
+However, the server does not close the connection yet because it may still have some data left to send.
+
+The server enters the CLOSE_WAIT state.
+
+Step 3 (FIN)
+
+After sending all its remaining data, the server sends its own FIN to the client.
+
+This informs the client:
+
+"Now I have also finished sending data."
+
+The server enters the LAST_ACK state.
+
+Step 4 (ACK)
+
+The client receives the server's FIN and sends a final ACK.
+
+This tells the server:
+
+"I received your FIN."
+
+The server closes the connection immediately.
+
+The client waits for a short time (TIME_WAIT) to ensure the final ACK reaches the server, and then it also closes the connection.
+
+Now the TCP connection is completely terminated.
